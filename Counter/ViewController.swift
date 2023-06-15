@@ -8,18 +8,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var counterText: UILabel!
     
-    @IBOutlet weak var counterButton: UIButton!
+    @IBOutlet weak private var counterText: UILabel!
+    
+    @IBOutlet weak private var counterButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-
-    @IBAction func buttonDidTap(_ sender: Any) {
-        counter += 1
     }
     
     var counter: Int = 0 {
@@ -28,8 +24,14 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateCounterText() {
+    private func updateCounterText() {
         counterText.text = "\(counter)"
     }
+    
+    @IBAction private func buttonDidTap(_ sender: Any) {
+        counter += 1
+    }
+    
 }
+
 
